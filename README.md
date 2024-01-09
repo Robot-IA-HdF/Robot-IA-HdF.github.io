@@ -30,5 +30,9 @@ git branch --track public public/main
 - Then: 
 
 ```
-
+git checkout public
+git merge main
 ```
+
+Anyone can connect the web site from their favorite web-brother at [https://robot-ia-hdf.github.io/](https://robot-ia-hdf.github.io).
+
