@@ -32,6 +32,9 @@ git branch --track public public/main
 ```
 git checkout public
 git merge main
+mv README.public.md README.md
+git commit -am 'deploy'
+git push
 ```
 
 Anyone can connect the web site from their favorite web-brother at [https://robot-ia-hdf.github.io/](https://robot-ia-hdf.github.io).
