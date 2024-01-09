@@ -1,3 +1,0 @@
-# WebPages for Robot-IA HdF
-
-This repo serve Robot-IA HdF pages generated from [https://github.com/robot-ia-hdf/robot-ia-hdf](github.com/robot-ia-hdf/robot-ia-hdf)...
