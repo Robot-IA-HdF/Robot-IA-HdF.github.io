@@ -116,7 +116,12 @@ Vous pouvez vous logger sur le compte: <strong>ros</strong> avec le mot de passe
 Vous êtes administrateurs sur les machines. Vous pouvez donc utiliser le gestionnaire de paquets: <code>apt</code> pour des paquets Ubuntu, ROS2 ... ou <code>pip</code> pour des librairies python.</li>
 <li><strong>Comment faire fonctionner la cartographie (SLAM) et la localisation dans une carte existante?</strong>
 Un tutoriel sur le SLAM est disponible <a href="https://ceri-num.gitbook.io/uv-larm">ici</a>.</li>
-</ul></div>
+<li><strong>J'ai un problème avec mon pibot : /scan est vide ou autre. Que faire ?</strong>
+Je peux redémarrer le driver ainsi :</li>
+</ul>
+<pre><code>ssh ros@pibotIP
+sudo systemctl restart mb6-tbot.service
+</code></pre></div>
             </div>
         </div>
 
