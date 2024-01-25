@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Ned2 - Robot-IA HdF</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Robot-IA HdF</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../planning/" class="nav-link">Planning</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../demarrage/" class="nav-link">Démarrage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../challenge/" class="nav-link">Challenge</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Ned2</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../pibot/" class="nav-link">Pibot</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../evaluation/" class="nav-link">Evaluation</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../faq/" class="nav-link">F.A.Q</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../media/" class="nav-link">Media</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../challenge/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../pibot/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#robot-niryo-ned2" class="nav-link">Robot Niryo Ned2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description-du-robot-ned2-et-son-kit-vision" class="nav-link">Description du robot Ned2 et son kit vision</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pc-fixe-de-travail" class="nav-link">PC fixe de travail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#prise-en-main" class="nav-link">Prise en main</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#connexion-ssh" class="nav-link">Connexion ssh</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#connexion-sur-niryostudio" class="nav-link">Connexion sur NiryoStudio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#demarrage-du-ned2" class="nav-link">Démarrage du Ned2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#extinction-du-ned2" class="nav-link">Extinction du Ned2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="robot-niryo-ned2">Robot Niryo Ned2</h1>
+<p><a href="https://docs.niryo.com/product/ned2/v1.0.0/fr/source/introduction.html#robot">Ned2</a> est un bras robot collaboratif six(6) axes, basé sur des technologies open-source. Il est conçu pour l'éducation, la recherche et industrie 4.0.
+Avec un poids utile de 300g et une portée maximale de 440 mm, Ned2 a une repetabilité de 0.5 mm et d'une precision de l'ordre de 0.5mm.
+Son architectecture logicielle est basée sur le middleware <a href="https://wiki.ros.org/melodic">ROS</a> et des environnements de programmation tels que : NiryoStudio2, Pyniryo2 etc...</p>
+<h2 id="description-du-robot-ned2-et-son-kit-vision">Description du robot Ned2 et son kit vision</h2>
+<p>La partie manipulation est constituer de :</p>
+<ul>
+<li>Un bras Ned2</li>
+<li>Une pince: Le prehenseur est une <a href="https://docs.niryo.com/product/ned2/v1.0.0/fr/source/hardware/tools_technical_specifications.html">pince</a> personnalisée. Ces caracteristiques sont:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Paramètres</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ouverture maximale</td>
+<td style="text-align: center;">43 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Distance de l’objet attrapé par rapport à la base de l’outil</td>
+<td style="text-align: center;">85 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Poids utile</td>
+<td style="text-align: center;">300g</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Pince" src="../imgs/pince.JPG" /></p>
+<p>Pour monter  la pince sur le bras, veuiller suivre la <a href="https://docs.niryo.com/product/ned2/v1.0.0/fr/source/hardware/mechanical_interface.html#tool-mounting">documention</a>
+- Un kit <a href="https://docs.niryo.com/product/ned2/v1.0.0/fr/source/introduction.html#vision-set">vision</a> (camera, une pointe de calibration et accessoires)</p>
+<p><strong>Ned2 avec kit vision:</strong>
+<img alt="Ned2" src="../imgs/Ned2_vision_set.JPG" /></p>
+<p>Ned2 est basé sur Ubuntu 18.04 et ROS Melodic et bénéficie des capacités d’une Raspberry PI 4, d’un processeur hautes-performaces 64-bit ARM V8 et de 4gb de RAM.
+Ned2 dispose d’un ensemble de librairies permettant de concevoir des programmes.</p>
+<h2 id="pc-fixe-de-travail">PC fixe de travail</h2>
+<p>Vous travaillerez sur le même PC.
+Avant toute manipulation du robot, veuillez lire attentivement les consignes de <a href="https://docs.niryo.com/product/ned2/v1.0.0/fr/source/hardware/safety_instructions.html#">securité</a></p>
+<h3 id="niryostudio"><a href="https://niryo.com/fr/niryo-studio-2/">NiryoStudio</a></h3>
+<p>En utilisant l'application NiryoStudio déjà installée sur votre PC fixe, vous pouvez contrôle le NED2.</p>
+<h3 id="connexion-au-robot">Connexion au robot</h3>
+<p>Il existe plusieurs façons de <a href="https://docs.niryo.com/dev/pyniryo2/v1.0.0/fr/source/setup/ip_address.html#">connecter</a> votre ordinateur au robot :</p>
+<pre><code>- Mode Hotspot: Si vous êtes directement connecté sur la wifi du robot, l’Adresse IP que vous devrez utiliser est 10.10.10.10
+- Connexion Ethernet: Connecter au robot avec l'adressse IP qui est sur le robot.
+</code></pre>
+<h3 id="installation-de-packages-a-laide-de-pip-et-virtualenv">Installation de packages à l'aide de pip et <a href="https://www.theconstructsim.com/ros2-how-to-install-third-party-python-packages-using-ros2-5/?utm_source=youtube&amp;utm_medium=video&amp;utm_campaign=geRxm6ykaZA">virtualenv</a></h3>
+<p>Ned2 n'est pas compatible avec ROS2. Pour cela vous allez installer les dependances python du Ned2 dans un environnement virtuel.</p>
+<p>Pour vérifier si virtualenv est installé, utilisez la commande suivante :</p>
+<pre><code class="language-sh">virtualenv --version
+</code></pre>
+<p>Si vous rencontrez une erreur comme celle-ci, cela signifie que virtualenv n'est pas installé :</p>
+<pre><code class="language-sh">bash: virtualenv: command not found
+</code></pre>
+<p>Pour installer virtualenv, utlisez les commandes suivantes :
+  1. installer python3-virtualenv</p>
+<pre><code>sudo apt update
+</code></pre>
+<pre><code class="language-sh">sudo apt install python3-virtualenv
+</code></pre>
+<ol>
+<li>Une fois virtualenv installé, vous pouvez créer votre environnement virtuel de de la façon suivante:</li>
+</ol>
+<pre><code class="language-sh">cd ~
+mkdir -p ~/niryo_ws/src
+cd ~/niryo_ws
+virtualenv -p python3 ./venv
+</code></pre>
+<p>Si tout s'est bien passé, vous devriez maintenant avoir un environnement virtuel python dans le dossier <code>~/niryo_ws</code>.</p>
+<ol>
+<li>Activer votre environnement virtuel avec la commande suivante :</li>
+</ol>
+<pre><code class="language-sh">source ./venv/bin/activate
+</code></pre>
+<p>Après activation votre environnement ressemblerait à ceci:</p>
+<pre><code class="language-sh">(venv) user:~/niryo_ws$
+</code></pre>
+<ol>
+<li>Ignorer le dossier venv (environnement virtuel) lors de la compilation de votre espace de travail ros2
+  Afin de dire à ROS2 de ne pas prendre en compte votre dossier venv lors de la compilation de l'espace de travail,
+  créer un fichier nommé <code>COLCON_IGNORE</code> dans le dossier <code>venv</code>.</li>
+</ol>
+<pre><code class="language-sh">touch ~/niryo_ws/venv/COLCON_IGNORE
+</code></pre>
+<h3 id="installation-du-package-pyniryo2">Installation du package <a href="https://docs.niryo.com/dev/pyniryo2/v1.0.0/fr/index.html#">pyniryo2</a>:</h3>
+<p>La librairie utilise Python. Pour installer le package <a href="https://pypi.org/project/pyniryo2/">pyniryo2</a> avec pip, exécutez simplement:</p>
+<pre><code class="language-sh">python3 -m pip install pyniryo2
+</code></pre>
+<p>Compier votre espace de travail:</p>
+<pre><code class="language-sh">cd ~/niryo_ws
+colcon build
+</code></pre>
+<p>Gardez à l'esprit que vous devez toujours activer l'environnement virtuel avant l'utiliser.
+  Pour quitter/désactiver l'environnement virtuel, vous pouvez exécuter la commande suivante :</p>
+<pre><code class="language-sh">deactivate
+</code></pre>
+<h2 id="prise-en-main">Prise en main</h2>
+<p>Utilisez la documentation de l'API <a href="https://docs.niryo.com/dev/pyniryo2/v1.0.0/fr/source/api_doc/niryo_robot.html">pyniryo2</a> pour connaitre les fonctionnalités de base du Ned2.
+Des tutoriels de prise en main du robot sont accessibles <a href="https://docs.niryo.com/dev/pyniryo2/v1.0.0/fr/source/examples/examples_basics.html">ici</a>.</p>
+<h3 id="tester-votre-premier-programme-en-python">Tester votre premier programme en python</h3>
+<pre><code class="language-sh">
+#!/usr/bin/env python3
+from pyniryo2 import *
+adr_IP= &quot;10.10.10.10&quot; # adresse IP de votre robot, utiliser votre IP
+robot = NiryoRobot(adr_IP)
+
+robot.arm.calibrate_auto()
+
+robot.arm.move_joints([0.2, -0.3, 0.1, 0.0, 0.5, -0.8])
+
+robot.end()
+
+</code></pre>
+<h2 id="connexion-ssh">Connexion <a href="https://docs.niryo.com/applications/ned/v1.0.4/en/source/tutorials/setup_connect_ned_ssh.html">ssh</a></h2>
+<p>Dans le terminal,taper  <code>ssh niryo@&lt;ip_address&gt;</code> avec mot de passe <code>robotics</code></p>
+<h2 id="connexion-sur-niryostudio">Connexion sur <a href="https://docs.niryo.com/product/niryo-studio/v4.1.1/fr/index.html?lang=fr">NiryoStudio</a></h2>
+<ol>
+<li>Lancer NiryoStudio</li>
+<li>Entrer dans la partie <code>Guest</code> le nom de votre groupe <code>GroupeX</code> avec x numéro de votre groupe</li>
+<li>Entrer votre token( Ecrit sur votre PC)</li>
+<li>Clicker sur <code>Connect robot</code> dans l'environnment</li>
+<li>Entrer votre Adresse IP et connectez-vous au robot.</li>
+</ol>
+<h2 id="demarrage-du-ned2">Démarrage du Ned2</h2>
+<ol>
+<li>Allumer Ned2 en appuyant sur le bouton <code>marche/arret</code></li>
+<li>Attendre une minute pour que le robot que le robot démarre en toute sécurité</li>
+<li>Se connecter au robot via NiryoStudio ou en ssh</li>
+</ol>
+<h2 id="extinction-du-ned2">Extinction du Ned2</h2>
+<ol>
+<li>Appuyer sur le bouton <code>marche/arret</code></li>
+<li>Attendre une minute pour que le robot d'éteigne en toute sécurité</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
